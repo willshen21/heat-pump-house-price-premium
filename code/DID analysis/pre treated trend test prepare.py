@@ -43,7 +43,7 @@ states_in_drive=states_in_drive[states_in_drive['index']!='AZ']
 states_in_drive=states_in_drive[states_in_drive['index']!='FL']
 states_in_drive=states_in_drive['index']
 
-#%% 20 states in the drive (except FL)
+#%% 
 for i in states_in_drive:
     location2='D:/Zillow data/Zillow data '+i+'/'
     saledata=pd.read_stata(location2+'saledata with importparcelID.dta',columns=['ImportParcelID','RecordingDate','SalesPriceAmount'])
