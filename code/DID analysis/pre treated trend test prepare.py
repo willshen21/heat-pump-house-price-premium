@@ -12,7 +12,7 @@ import numpy as np
 from datetime import datetime
 
 #%%
-df=pd.read_stata('treatment and mixed control group-same county-drop remodel after 2000-only 2 periods-drop EL-Remodel_AGE.dta')
+df=pd.read_stata('treatment and mixed control group.dta')
 df=df[df['treatment']==1]
 df=df.drop_duplicates(subset=['ImportParcelID'], keep='first')
 df=df[['ImportParcelID','beforetime','state']]
@@ -74,7 +74,7 @@ saledata=saledata[saledata['beforetime']>saledata['RecordingDate']]
 predf=pd.concat([predf,saledata],sort=False)
 
 #%%
-df2=pd.read_stata('treatment and mixed control group-same county-drop remodel after 2000-only 2 periods-drop EL-Remodel_AGE.dta')
+df2=pd.read_stata('treatment and mixed control group.dta')
 df2=df2[df2['treatment']==1]
 df2=df2.drop_duplicates(subset=['ImportParcelID'], keep='first')
 df2=df2[['ImportParcelID','YearBuilt', 'YearRemodeled','FIPS']]
